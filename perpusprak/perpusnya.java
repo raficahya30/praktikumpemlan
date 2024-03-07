@@ -1,0 +1,66 @@
+package perpusprak;
+
+import java.util.Scanner;
+
+public class perpusnya {
+        public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int kategori;
+        databook perpus = new databook();
+        do {
+            String list[] = { "=====[Selamat Datang di Perpustakaan]=====", 
+                    "\nMasukkan pilihan kategori yang ingin anda cari :", 
+                    "\n1. Agama", "\n2. Sejarah", "\n3. Filsafat", "\n4. Teknologi", "\n5. fiksi", "\n6. Psikologi", "\n7. Politik",
+                    "\n8. Tampilkan jumlah buku" };
+
+            for (int i = 0; i < list.length; i++) {
+                System.out.print(list[i]);
+            }
+            System.out.println();
+            System.out.print("Masukkan pilihan anda = ");
+            kategori = input.nextInt();
+            System.out.println();
+
+            switch (kategori) {
+                case 1:
+                    System.out.println("Berikut daftar Buku dalam kategori Agama:");
+                    databook.tampilan(perpus.forAgama());
+                    break;
+                case 2:
+                    System.out.println("Berikut daftar Buku dalam kategori Sejarah:");
+                    databook.tampilan(perpus.forSejarah());
+                    break;
+                case 3:
+                    System.out.println("Berikut daftar Buku dalam kategori Filsafat");
+                    databook.tampilan(perpus.forFilsafat());
+                    break;
+                case 4:
+                    System.out.println("Berikut daftar Buku dalam kategori Teknologi");
+                    databook.tampilan(perpus.forAgama());
+                    break;
+                case 5:
+                    System.out.println("Berikut daftar Buku dalam kategori Fiksi : ");
+                    databook.tampilan(perpus.forFiksi());
+                    break;
+                case 6:
+                    System.out.println("Berikut daftar Buku dalam kategori Psikolog : ");
+                    databook.tampilan(perpus.forPsikologi());
+                    break;
+                case 7:
+                    System.out.println("Berikut daftar Buku dalam kategori Politik : ");
+                    databook.tampilan(perpus.forPolitik());
+                    break;
+                case 8:
+                    System.out.println("Jumlah total buku: 35");
+                    break;
+                case 9:
+                    break;
+                default:
+                    System.out.println("Pilihan tidak valid. Silakan pilih angka 1 hingga 9.");
+            }
+        } while (kategori < 1 || kategori > 7);
+
+        System.out.println("Terimakasih sudah menggunakan sistem ini");
+        input.close();
+    }
+}
